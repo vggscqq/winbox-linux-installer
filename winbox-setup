@@ -60,7 +60,6 @@ depInst() {
 }
 
 # Downloading latest version of Winbox from Mikrotik's website.
-# The URL of the file is parsed from https://cloud.sbskomputer.net
 wbDl() {
 
   if [[ -f winbox.exe ]]
@@ -68,7 +67,7 @@ wbDl() {
     echo "Using previously downloaded winbox.exe"
   else
     echo -n "Downloading Winbox..."
-    URL="http:"$(curl -s https://portal.sbskomputer.web.id/ftp/windows | grep -o //.*winbox.exe)
+    URL="https://download.mikrotik.com/routeros/winbox/3.41/winbox64.exe"
     URLlenght=${#URL}
     if [[ $URLlenght<60 ]]; then
       echo "FAILED"
